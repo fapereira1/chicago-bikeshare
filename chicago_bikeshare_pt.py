@@ -41,7 +41,8 @@ input("Aperte Enter para continuar...")
 # TODO: Imprima o `gênero` das primeiras 20 linhas
 
 print("\nTAREFA 2: Imprimindo o gênero das primeiras 20 amostras")
-
+for sample in data_list[:20]:
+    print(sample[-2])
 
 # Ótimo! Nós podemos pegar as linhas(samples) iterando com um for, e as colunas(features) por índices.
 # Mas ainda é difícil pegar uma coluna em uma lista. Exemplo: Lista com todos os gêneros
@@ -51,7 +52,7 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 def column_to_list(data, index):
     column_list = []
-    # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
+    column_list = [sample[index] for sample in data]
     return column_list
 
 
@@ -69,8 +70,10 @@ input("Aperte Enter para continuar...")
 # Agora sabemos como acessar as features, vamos contar quantos Male (Masculinos) e Female (Femininos) o dataset tem
 # TAREFA 4
 # TODO: Conte cada gênero. Você não deveria usar uma função parTODO isso.
+genders = column_to_list(data_list, -2)
 male = 0
 female = 0
+
 
 
 # Verificando o resultado
